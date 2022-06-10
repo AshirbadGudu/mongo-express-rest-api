@@ -1,7 +1,9 @@
-import { config } from "dotenv";
 import express from "express";
+import { init } from "./configs";
 import { users } from "./routers";
-config();
+
+// Initialize the required configs
+init();
 
 const PORT = process.env.PORT || 3023;
 
