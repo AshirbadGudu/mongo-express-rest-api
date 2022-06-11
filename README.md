@@ -1,4 +1,4 @@
-# Node JS Express TypeScript Stater
+# MongoDB Express TypeScript REST API
 
 ## Steps to setup
 
@@ -70,10 +70,16 @@ npm i express
 npm i @types/express --save-dev
 ```
 
-### Install `dotenv`
+### Install `dotenv` package for environment variables
 
 ```sh
 npm i dotenv
+```
+
+### Install `mongoose` package for interacting with MongoDB
+
+```sh
+npm i mongoose
 ```
 
 ### Create following directories
@@ -83,4 +89,6 @@ mkdir test # for holding API test files
 mkdir ./src/types # for holding types for project
 mkdir ./src/routes # for holding routes of API endpoints
 mkdir ./src/controllers # for holding controllers of API endpoints
+mkdir ./src/models # for holding models of MongoDB
+mkdir ./src/schemas # for holding schemas of MongoDB
 ```
