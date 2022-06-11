@@ -1,16 +1,5 @@
 import { Request, Response } from "express";
-import { model, Schema } from "mongoose";
-import { User } from "../types";
-
-const userSchema = new Schema<User>(
-  {
-    displayName: { type: String, required: true },
-    email: { type: String, required: true },
-    password: { type: String, required: true },
-  },
-  { collection: "USERS" }
-);
-const UsersModel = model<User>("User", userSchema);
+import { UsersModel } from "../models";
 
 const getAllUsers = async (req: Request, res: Response) => {
   try {
