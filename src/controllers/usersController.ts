@@ -1,11 +1,12 @@
 import { Request, Response } from "express";
+import { getPaginatedData } from "../helpers";
 import { UsersModel } from "../models";
 
 const getAllUsers = async (req: Request, res: Response) => {
   try {
-    const users = await UsersModel.find({});
+    const results = await getPaginatedData(req, UsersModel);
     res.status(200).json({
-      data: { users },
+      ...results,
       message: "Users fetched successfully",
     });
   } catch (error) {
