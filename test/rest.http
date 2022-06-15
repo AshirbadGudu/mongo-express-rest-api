@@ -1,5 +1,11 @@
 ### Get All Users
+GET http://localhost:4022/users HTTP/1.1
+
+### Get Limited Users
 GET http://localhost:4022/users?page=3&limit=2 HTTP/1.1
+
+### Get Searched Users
+GET http://localhost:4022/users/search?text=1 NewThing HTTP/1.1
 
 ### Create User
 POST http://localhost:4022/users/create HTTP/1.1

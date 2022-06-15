@@ -16,6 +16,25 @@ const getAllUsers = async (req: Request, res: Response) => {
   }
 };
 
+const getSearchedUsers = async (req: Request, res: Response) => {
+  try {
+    const { text } = req.query;
+
+    const users = await UsersModel.find({
+      $or: [{ displayName: { $regex: text } }, { email: { $regex: text } }],
+    });
+
+    res.status(200).json({
+      data: users,
+      message: "Users fetched successfully",
+    });
+  } catch (error) {
+    res.status(500).json({
+      data: { error },
+    });
+  }
+};
+
 const createUser = async (req: Request, res: Response) => {
   try {
     console.log(req.body);
@@ -67,4 +86,10 @@ const deleteUser = async (req: Request, res: Response) => {
   }
 };
 
-export default { getAllUsers, createUser, updateUser, deleteUser };
+export default {
+  getAllUsers,
+  getSearchedUsers,
+  createUser,
+  updateUser,
+  deleteUser,
+};
