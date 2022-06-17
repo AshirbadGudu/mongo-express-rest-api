@@ -1,0 +1,28 @@
+### Get All categories
+GET http://localhost:4022/categories HTTP/1.1
+
+### Get Limited categories
+GET http://localhost:4022/categories?page=2&limit=1 HTTP/1.1
+
+### Get Searched categories
+GET http://localhost:4022/categories/search?text=Electronics HTTP/1.1
+
+### Create product
+POST http://localhost:4022/categories/create HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "clothing"
+}
+
+### Update product
+PUT http://localhost:4022/categories/update HTTP/1.1
+Content-Type: application/json
+
+{
+    "_id" : "62abeb5e7f5f2d7201c83c47",
+    "name" : "electronics"
+}
+
+### Delete product
+DELETE http://localhost:4022/categories/delete/62abeb917f5f2d7201c83c56 HTTP/1.1
