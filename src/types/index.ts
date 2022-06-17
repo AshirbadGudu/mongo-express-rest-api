@@ -5,6 +5,15 @@ export type User = {
   displayName: string;
   email: string;
   password: string;
+  createdAt: Date;
+  updatedAt: Date;
+};
+
+export type Category = {
+  _id: string;
+  name: string;
+  createdAt: Date;
+  updatedAt: Date;
 };
 
 export type Product = {
@@ -15,7 +24,7 @@ export type Product = {
   image: string;
   createdAt: Date;
   updatedAt: Date;
-  category: string;
+  category: Category;
 };
 
 export type Page = {
