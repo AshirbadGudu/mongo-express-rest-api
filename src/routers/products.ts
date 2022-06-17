@@ -6,7 +6,7 @@ const router = Router();
 
 router.get(
   "/",
-  paginateMiddleware(ProductModel),
+  paginateMiddleware(ProductModel, "category"),
   productsController.getAllProducts
 );
 

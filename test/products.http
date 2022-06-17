@@ -14,7 +14,7 @@ Content-Type: application/json
 {
     "name": "Mobile",
     "price": 100,
-    "category": "Phone"
+    "category": "62abeb5e7f5f2d7201c83c47"
 }
 
 ### Update product
@@ -22,8 +22,8 @@ PUT http://localhost:4022/products/update HTTP/1.1
 Content-Type: application/json
 
 {
-    "_id" : "62abd8c70d04e2b637f85e20",
-    "name" : "IMobile"
+    "_id" : "62aa87946f74670927484e56",
+    "category": "62abeb5e7f5f2d7201c83c47"
 }
 
 ### Delete product

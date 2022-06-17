@@ -1,4 +1,4 @@
-import { Schema } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 import { Product } from "../types";
 
 export default new Schema<Product>(
@@ -24,7 +24,8 @@ export default new Schema<Product>(
       type: String,
     },
     category: {
-      type: String,
+      type: mongoose.SchemaTypes.ObjectId,
+      ref: "Category",
     },
     createdAt: {
       type: Date,
