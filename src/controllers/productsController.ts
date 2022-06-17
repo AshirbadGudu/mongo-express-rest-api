@@ -21,7 +21,7 @@ const getSearchedProducts = async (req: Request, res: Response) => {
     const { text } = req.query;
 
     const products = await ProductModel.find({
-      $or: [{ displayName: { $regex: text } }, { email: { $regex: text } }],
+      $or: [{ name: { $regex: text } }],
     });
 
     res.status(200).json({
