@@ -1,6 +1,6 @@
 import express from "express";
 import { init } from "./configs";
-import { users } from "./routers";
+import { products, users } from "./routers";
 
 // Initialize the required configs
 init();
@@ -16,9 +16,10 @@ app.use(express.json());
 app.get("/", (_, res) => res.send("Node JS Express Typescript Server Running"));
 
 /**
- * Create a REST API for users route
+ * API Routes
  * */
 
 app.use("/users/", users);
+app.use("/products/", products);
 
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
