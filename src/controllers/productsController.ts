@@ -1,12 +1,10 @@
 import { Request, Response } from "express";
-import { getPaginatedData } from "../helpers";
 import { ProductModel } from "../models";
 
-const getAllProducts = async (req: Request, res: Response) => {
+const getAllProducts = async (req: Request, res: any) => {
   try {
-    const results = await getPaginatedData(req, ProductModel);
     res.status(200).json({
-      ...results,
+      ...res.paginatedData,
       message: "Products fetched successfully",
     });
   } catch (error) {

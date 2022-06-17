@@ -1,8 +1,14 @@
 import { Router } from "express";
 import { productsController } from "../controllers";
+import { paginateMiddleware } from "../middlewares";
+import { ProductModel } from "../models";
 const router = Router();
 
-router.get("/", productsController.getAllProducts);
+router.get(
+  "/",
+  paginateMiddleware(ProductModel),
+  productsController.getAllProducts
+);
 
 router.get("/search", productsController.getSearchedProducts);
 

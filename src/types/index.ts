@@ -1,3 +1,5 @@
+import { Response } from "express";
+
 export type User = {
   _id: string;
   displayName: string;
@@ -14,4 +16,20 @@ export type Product = {
   createdAt: Date;
   updatedAt: Date;
   category: string;
+};
+
+export type Page = {
+  limit: number;
+  page: number;
+};
+
+export type PaginatedData<T> = {
+  data: T[];
+  total: number;
+  next?: Page;
+  previous?: Page;
+};
+
+export type IResponse<T> = Response & {
+  paginatedData: PaginatedData<T>;
 };
