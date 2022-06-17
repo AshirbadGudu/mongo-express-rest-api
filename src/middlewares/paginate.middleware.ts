@@ -1,7 +1,10 @@
 import { NextFunction, Request } from "express";
 import mongoose from "mongoose";
 
-const paginateMiddleware = (DBModel: typeof mongoose.Model) => {
+const paginateMiddleware = (
+  DBModel: typeof mongoose.Model,
+  populate?: string
+) => {
   return async (req: Request, res: any, next: NextFunction) => {
     const { limit, page } = req.query;
     const total = await DBModel.countDocuments();
@@ -11,7 +14,8 @@ const paginateMiddleware = (DBModel: typeof mongoose.Model) => {
       res.paginatedData.data = await DBModel.find()
         .sort({ createdAt: -1 })
         .limit(+limit)
-        .skip(+skip);
+        .skip(+skip)
+        .populate(populate || "");
       if (+page * +limit < total)
         res.paginatedData.next = {
           limit: +limit,
@@ -23,7 +27,9 @@ const paginateMiddleware = (DBModel: typeof mongoose.Model) => {
           page: +page - 1,
         };
     } else {
-      res.paginatedData.data = await DBModel.find().sort({ createdAt: -1 });
+      res.paginatedData.data = await DBModel.find()
+        .sort({ createdAt: -1 })
+        .populate(populate || "");
     }
     res.paginatedData.total = total;
     next();
