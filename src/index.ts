@@ -1,6 +1,6 @@
 import express from "express";
 import { init } from "./configs";
-import { products, users } from "./routers";
+import { categories, products, users } from "./routers";
 
 // Initialize the required configs
 init();
@@ -21,5 +21,6 @@ app.get("/", (_, res) => res.send("Node JS Express Typescript Server Running"));
 
 app.use("/users/", users);
 app.use("/products/", products);
+app.use("/categories/", categories);
 
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
