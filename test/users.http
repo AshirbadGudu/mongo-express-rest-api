@@ -1,14 +1,14 @@
 ### Get All Users
-GET http://localhost:4022/users HTTP/1.1
+GET {{BASE_URL}}/users HTTP/1.1
 
 ### Get Limited Users
-GET http://localhost:4022/users?page=3&limit=2 HTTP/1.1
+GET {{BASE_URL}}/users?page=3&limit=2 HTTP/1.1
 
 ### Get Searched Users
-GET http://localhost:4022/users/search?text=1 NewThing HTTP/1.1
+GET {{BASE_URL}}/users/search?text=1 NewThing HTTP/1.1
 
 ### Create User
-POST http://localhost:4022/users/create HTTP/1.1
+POST {{BASE_URL}}/users/create HTTP/1.1
 Content-Type: application/json
 
 {
@@ -18,13 +18,13 @@ Content-Type: application/json
 }
 
 ### Update User
-PUT http://localhost:4022/users/update HTTP/1.1
+PUT {{BASE_URL}}/users/update HTTP/1.1
 Content-Type: application/json
 
 {
-    "_id" : "62a93878b9b83a8f3add3806",
-    "displayName" : "Thing"
+    "_id" : "{{_id}}",
+    "displayName" : "New Thing"
 }
 
 ### Delete User
-DELETE http://localhost:4022/users/delete/62a9387ab9b83a8f3add3808 HTTP/1.1
+DELETE {{BASE_URL}}/users/delete/62a9387ab9b83a8f3add3808 HTTP/1.1
