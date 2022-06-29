@@ -1,0 +1,18 @@
+### 
+POST {{BASE_URL}}/file/upload HTTP/1.1
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="name"
+
+headphones
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="price"
+
+20
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="productImage"; filename="1.png"
+Content-Type: image/png
+
+< ./1.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
