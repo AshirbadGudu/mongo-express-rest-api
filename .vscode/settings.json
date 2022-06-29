@@ -1,0 +1,10 @@
+{
+  "rest-client.environmentVariables": {
+    "$shared": {
+      "_id": "62a93878b9b83a8f3add3806"
+    },
+    "Development": {
+      "BASE_URL": "http://localhost:4022"
+    }
+  }
+}
